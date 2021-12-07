@@ -2,7 +2,7 @@
 
 const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const binarySearch = (arr: number[], target: number): number => {
+export const binarySearch = (arr: number[], target: number): number => {
     return binarySearchRecursive(arr, target, 0, arr.length - 1);
     
     function binarySearchRecursive (arr: number[], target: number, left: number, right: number): number {
