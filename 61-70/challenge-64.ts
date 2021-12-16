@@ -1,15 +1,11 @@
-// COMPARE IF TWO TREE ARE EQUAL
+// COMPARE IF TWO TREE ARE THE SAME OR NOT USING RECURSION
 
-const isEqual = (tree1: any, tree2: any): boolean => {
-  if (tree1.value !== tree2.value) return false;
-  if (tree1.value === [] && tree2.value !== []) return false;
-  if (tree1.left === null && tree2.left !== null) return false;
-    if (tree1.right === null && tree2.right !== null) return false;
-  if (tree1.left && tree2.left) {
-    return isEqual(tree1.left, tree2.left);
-  }
-  if (tree1.right && tree2.right) {
-    return isEqual(tree1.right, tree2.right);
-  }
-  return true;
+const isSameTree = (tree1: TreeNode, tree2: TreeNode): boolean => {
+    if (tree1 === null && tree2 === null) return true;
+    if (tree1 === null || tree2 === null) return false;
+    if (tree1.val !== tree2.val) return false;
+
+    if (isSameTree(tree1.left, tree2.left) && isSameTree(tree1.right, tree2.right)) return true;
+
+    return false;
 }
